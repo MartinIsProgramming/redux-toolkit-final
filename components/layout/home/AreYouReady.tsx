@@ -1,7 +1,6 @@
-import { FC } from 'react';
-import { CallToActionLink } from '../../shared';
+import { CallToActionLink } from '../../shared/CallToActionLink';
 
-export const AreYouReady: FC = () => {
+export const AreYouReady = () => {
   return (
     <section className="px-4 py-12 mx-auto lg:flex sm:py-20 max-w-7xl sm:px-6 lg:px-8 lg:justify-between">
       <h2 className="flex flex-col mb-6 text-3xl font-extrabold tracking-tight lg:mb-0 sm:text-4xl">

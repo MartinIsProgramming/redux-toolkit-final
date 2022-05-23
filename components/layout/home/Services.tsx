@@ -1,8 +1,47 @@
-import { FC } from 'react';
-import { servicesList } from '../../../data';
+import { SVGProps } from 'react';
+import {
+  DocumentTextIcon,
+  SpeakerphoneIcon,
+  TruckIcon,
+  LightningBoltIcon,
+} from '@heroicons/react/outline';
+
 import { SectionTitle } from '../shared/SectionTitle';
 
-export const Services: FC = () => {
+export interface Service {
+  name: string;
+  description: string;
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+}
+
+export const servicesList: Service[] = [
+  {
+    name: 'Brand new cars',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: TruckIcon,
+  },
+  {
+    name: 'Used cars',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: SpeakerphoneIcon,
+  },
+  {
+    name: 'Paper work',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: DocumentTextIcon,
+  },
+  {
+    name: 'Fastest service',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+    icon: LightningBoltIcon,
+  },
+];
+
+export const Services = () => {
   return (
     <section className="py-12 bg-gray-50 sm:py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

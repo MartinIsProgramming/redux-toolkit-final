@@ -1,15 +1,14 @@
-import { FC } from 'react';
 import Image from 'next/image';
 import { MailIcon } from '@heroicons/react/outline';
 
-import { SectionTitle } from '../shared';
-import { StandardBtn } from '../../shared';
+import { StandardBtn } from '../../shared/StandardBrn';
+import { SectionTitle } from '../shared/SectionTitle';
+import { useAppDispatch } from '../../../hooks';
+import { toggleModal } from '../../../features/contactModel/contactModelSlice';
 
-interface Props {
-  openModal: () => void;
-}
+export const OurStory = () => {
+  const dispatch = useAppDispatch();
 
-export const OurStory: FC<Props> = ({ openModal }) => {
   return (
     <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 max-w-7xl lg:px-8">
       <SectionTitle title="Our Story" label="Background" />
@@ -45,7 +44,7 @@ export const OurStory: FC<Props> = ({ openModal }) => {
           <StandardBtn
             text="contact"
             type="button"
-            onClick={openModal}
+            onClick={() => dispatch(toggleModal())}
             icon={<MailIcon className="w-4 h-4 mr-1" aria-hidden="true" />}
           />
         </div>

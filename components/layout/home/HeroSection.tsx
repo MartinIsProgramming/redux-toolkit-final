@@ -1,7 +1,6 @@
-import { FC } from 'react';
-import { CallToActionLink } from '../../shared';
+import { CallToActionLink } from '../../shared/CallToActionLink';
 
-export const HeroSection: FC = () => {
+export const HeroSection = () => {
   return (
     <section className="px-2 py-12 mx-auto sm:py-20 max-w-7xl sm:text-center sm:px-0 lg:max-w-2xl lg:mx-auto">
       <h1 className="flex flex-col text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">

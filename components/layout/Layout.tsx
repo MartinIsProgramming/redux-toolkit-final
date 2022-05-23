@@ -1,6 +1,7 @@
 import { FC, ReactElement } from 'react';
 import Head from 'next/head';
-import { Footer, Navigation } from './shared';
+import { Navigation } from './shared/Navigation';
+import { Footer } from './shared/Footer';
 
 interface Props {
   title?: string;

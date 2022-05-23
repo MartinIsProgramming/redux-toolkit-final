@@ -1,12 +1,21 @@
-import { FC } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/outline';
 
-import { navigationLinks } from '../../../data';
-import { CustomNavLink } from '../../shared';
-import { Logo } from '.';
+import { Logo } from './Logo';
+import { CustomNavLink } from '../../shared/CustomNavLink';
 
-export const Navigation: FC = () => {
+export interface LinkProps {
+  name: string;
+  href: string;
+}
+
+const navigationLinks: LinkProps[] = [
+  { name: 'home', href: '/' },
+  { name: 'about', href: '/about' },
+  { name: 'cars', href: '/cars' },
+];
+
+export const Navigation = () => {
   return (
     <Disclosure as="nav" className="shadow-md">
       {({ open }) => (

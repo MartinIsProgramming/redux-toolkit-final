@@ -1,21 +1,21 @@
-import { FC, Fragment } from 'react';
+import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { InformationCircleIcon } from '@heroicons/react/outline';
-import { StandardBtn } from './shared';
+import { StandardBtn } from '../../shared/StandardBrn';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
+import { toggleModal } from '../../../features/contactModel/contactModelSlice';
 
-interface Props {
-  isOpen: boolean;
-  closeModal: () => void;
-}
+export const ContactModal = () => {
+  const { isOpen } = useAppSelector(state => state.contactModal);
+  const dispatch = useAppDispatch();
 
-export const ContactModal: FC<Props> = ({ isOpen, closeModal }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
         as="div"
         className="fixed inset-0 z-10 overflow-y-auto top-52"
         open={isOpen}
-        onClose={closeModal}
+        onClose={() => dispatch(toggleModal())}
       >
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-70" />
         <div className="min-h-screen px-4 text-center">
@@ -37,7 +37,7 @@ export const ContactModal: FC<Props> = ({ isOpen, closeModal }) => {
               <StandardBtn
                 text="Got it, thanks!"
                 type="button"
-                onClick={closeModal}
+                onClick={() => dispatch(toggleModal())}
                 customClasses="w-full sm:w-auto"
               />
               <StandardBtn
